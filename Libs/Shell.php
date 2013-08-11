@@ -73,8 +73,12 @@ class Shell
      * 
      * @return Array
      */
-    public function getCmdList()
+    public function getCmdList($as_string = false)
     {
+        if ($as_string) {
+            return implode('; ', $this->getCmdList());
+        }
+        
         return $this->cmdList;
     }
     
